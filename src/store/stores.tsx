@@ -13,38 +13,20 @@ const initialState: stateInterface = {
   tasks: [],
 };
 
-// const ActionTypes: { Submit_Task: string, Delete_Task: string } {
-//   Submit_Task = "Submit Task",
-//   Delete_Task = "Delete Task",
-// }
-// const action
+//made changes for interface
 
-enum ActionTypes {
-  Submit_Task = "Submit Task",
-  Delete_Task = "Delete Task",
+interface Payload {
+  title ?: string,
+  desc ?: string,
+  id: number
 }
 
-const submitTask = (submit:submit_Task)=> ({
-	type: ActionTypes.Submit_Task,
-	payload: { submit },
-});
-
-interface DeleteTask {
-  type : string,
-  id : number,
-
+interface  Action{
+  type:string
+  payload : Payload
 }
 
- const deleteTask = (deleteTask:DeleteTask) => ({
-	type: ActionTypes.Delete_Task,
-	payload: {deleteTask},
-});
-
-interface submit_Task {
- type : string,
-} 
-
-const addToTaskReducer = (state = initialState, action: any) : stateInterface=> {
+const addToTaskReducer = (state = initialState, action: Action) : stateInterface=> {
   console.log("before entering switch case", action, state);
   switch (action.type) {
     case "submit_task": {
@@ -71,7 +53,7 @@ const addToTaskReducer = (state = initialState, action: any) : stateInterface=> 
 };
 
 const store = configureStore({
-  reducer:  addToTaskReducer,
+  reducer: addToTaskReducer,
   
 });
 
