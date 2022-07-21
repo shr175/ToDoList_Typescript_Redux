@@ -1,22 +1,18 @@
 
-import Create from './components/ToDoList';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar'
+import ToDoList from './components/ToDoList';
 import './App.css';
+
 
 function App() {
 return (
 
   <>
-  
   <Navbar />
-  <Create />
-
- 
+  <ToDoList />
   </>
 
   );
-
-
 }
 
 export default App;

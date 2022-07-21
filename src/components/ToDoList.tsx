@@ -73,6 +73,7 @@ function ToDoList(props : Props) {
 //   };
 
 // 
+console.log("props", props)
   return (
     <div>
       <div
@@ -173,9 +174,10 @@ function ToDoList(props : Props) {
   );
 }
 
-const mapStateToProps = (state : RootState) => {
-  console.log("mapstate reached")
+const mapStateToProps = (state : any) => {
+  console.log("mapstate reached", state)
   return {
+    // tasks: state.addToTaskReducer.tasks,
     tasks: state.tasks,
   };
 };
